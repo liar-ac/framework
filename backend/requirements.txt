@@ -1,0 +1,10 @@
+Django>=4.2,<5.0
+djangorestframework>=3.14,<4.0
+djangorestframework-simplejwt>=5.3,<6.0
+django-cors-headers>=4.3,<5.0
+python-dotenv>=1.0,<2.0
+# MySQL 驱动（二选一）
+# 方案A: mysqlclient（性能更好，需C编译器）
+# mysqlclient>=2.2,<3.0
+# 方案B: pymysql（纯Python，Windows推荐）
+PyMySQL>=1.1,<2.0
