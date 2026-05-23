@@ -1,4 +1,4 @@
-# FrameWord 前端
+# Framework 前端
 
 基于 Vue 3 + Vite 的前端基础框架。
 

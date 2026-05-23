@@ -1,4 +1,4 @@
-# FrameWord 后端
+# Framework 后端
 
 基于 Django + Django REST Framework 的后端基础框架。
 
@@ -29,7 +29,7 @@ cp .env.example .env
 # 编辑 .env 修改 SECRET_KEY 和 MySQL 密码
 
 # 4. 在 MySQL 中创建数据库
-mysql -u root -p -e "CREATE DATABASE frameword CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+mysql -u root -p -e "CREATE DATABASE framework CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 
 # 5. 执行数据库迁移
 python manage.py migrate

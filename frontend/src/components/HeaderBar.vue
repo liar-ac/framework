@@ -1,6 +1,6 @@
 <template>
   <header class="header-bar">
-    <span class="header-title">FrameWord</span>
+    <span class="header-title">Framework</span>
     <div class="header-right">
       <span class="header-user">{{ userStore.userInfo?.username || '' }}</span>
       <button class="btn-logout" @click="handleLogout">退出</button>
