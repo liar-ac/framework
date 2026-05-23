@@ -1,30 +1,77 @@
 <template>
-  <div class="auth-page">
-    <div class="auth-card">
-      <h2 class="auth-title">注册</h2>
-      <form @submit.prevent="handleRegister">
-        <div class="form-group">
-          <label>用户名</label>
-          <input v-model="form.username" type="text" placeholder="请输入用户名" required />
+  <div
+    class="min-h-screen flex items-center justify-center p-4 bg-slate-50 dark:bg-[#131314] relative overflow-hidden"
+  >
+    <div
+      class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-br from-violet-500/8 via-indigo-500/8 to-blue-500/8 rounded-full blur-3xl pointer-events-none"
+    />
+
+    <div class="relative w-full max-w-[400px]">
+      <div class="flex flex-col items-center mb-8">
+        <div
+          class="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-500 to-violet-500 flex items-center justify-center shadow-sm mb-4"
+        >
+          <Layers :size="22" class="text-white" />
         </div>
-        <div class="form-group">
-          <label>邮箱</label>
-          <input v-model="form.email" type="email" placeholder="请输入邮箱（选填）" />
-        </div>
-        <div class="form-group">
-          <label>密码</label>
-          <input v-model="form.password" type="password" placeholder="请输入密码（至少6位）" required minlength="6" />
-        </div>
-        <div class="form-group">
-          <label>确认密码</label>
-          <input v-model="form.password2" type="password" placeholder="请再次输入密码" required minlength="6" />
-        </div>
-        <p v-if="errMsg" class="error-msg">{{ errMsg }}</p>
-        <button type="submit" class="btn-primary" :disabled="loading">
-          {{ loading ? '注册中...' : '注 册' }}
-        </button>
-      </form>
-      <p class="auth-link">已有账号？<router-link to="/login">去登录</router-link></p>
+        <h1 class="text-xl font-bold text-slate-900 dark:text-slate-100">
+          Create account
+        </h1>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
+          Get started with Framework
+        </p>
+      </div>
+
+      <div
+        class="rounded-2xl border border-slate-200/60 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-[0_1px_3px_rgba(15,23,42,0.04)]"
+      >
+        <form @submit.prevent="handleRegister" class="space-y-4">
+          <AppInput
+            v-model="form.username"
+            label="Username"
+            placeholder="Choose a username"
+          />
+          <AppInput
+            v-model="form.email"
+            label="Email"
+            type="email"
+            placeholder="your@email.com (optional)"
+          />
+          <AppInput
+            v-model="form.password"
+            label="Password"
+            type="password"
+            placeholder="At least 6 characters"
+          />
+          <AppInput
+            v-model="form.password2"
+            label="Confirm Password"
+            type="password"
+            placeholder="Repeat your password"
+          />
+
+          <div
+            v-if="errMsg"
+            class="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20"
+          >
+            <AlertCircle :size="16" class="text-red-500 shrink-0" />
+            <p class="text-sm text-red-600 dark:text-red-400">{{ errMsg }}</p>
+          </div>
+
+          <AppButton type="submit" :loading="loading" class="w-full">
+            Create account
+          </AppButton>
+        </form>
+
+        <p class="mt-5 text-center text-sm text-slate-500 dark:text-slate-400">
+          Already have an account?
+          <router-link
+            to="/login"
+            class="font-medium text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            Sign in
+          </router-link>
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -33,6 +80,9 @@
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '../stores/user'
+import AppInput from '../components/ui/AppInput.vue'
+import AppButton from '../components/ui/AppButton.vue'
+import { Layers, AlertCircle } from 'lucide-vue-next'
 
 const router = useRouter()
 const userStore = useUserStore()

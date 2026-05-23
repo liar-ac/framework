@@ -29,7 +29,6 @@ const routes = [
         name: 'Home',
         component: () => import('../views/Home.vue'),
       },
-      // 预留后台管理路由
       {
         path: 'dashboard',
         name: 'Dashboard',
@@ -39,6 +38,11 @@ const routes = [
         path: 'system',
         name: 'System',
         component: () => import('../views/System.vue'),
+      },
+      {
+        path: 'settings',
+        name: 'Settings',
+        component: () => import('../views/Settings.vue'),
       },
     ],
   },
@@ -59,10 +63,8 @@ router.beforeEach((to, from, next) => {
   const loggedIn = isLoggedIn()
 
   if (to.meta.requiresAuth && !loggedIn) {
-    // 未登录，跳转登录页
     next({ name: 'Login' })
   } else if (to.meta.guest && loggedIn) {
-    // 已登录，跳转首页
     next({ name: 'Home' })
   } else {
     next()
