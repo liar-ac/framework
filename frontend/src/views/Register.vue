@@ -14,10 +14,10 @@
           <Layers :size="22" class="text-white" />
         </div>
         <h1 class="text-xl font-bold text-slate-900 dark:text-slate-100">
-          Create account
+          创建账号
         </h1>
         <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
-          Get started with Framework
+          开始使用开发框架
         </p>
       </div>
 
@@ -27,26 +27,26 @@
         <form @submit.prevent="handleRegister" class="space-y-4">
           <AppInput
             v-model="form.username"
-            label="Username"
-            placeholder="Choose a username"
+            label="用户名"
+            placeholder="请输入用户名"
           />
           <AppInput
             v-model="form.email"
-            label="Email"
+            label="邮箱"
             type="email"
-            placeholder="your@email.com (optional)"
+            placeholder="your@email.com（选填）"
           />
           <AppInput
             v-model="form.password"
-            label="Password"
+            label="密码"
             type="password"
-            placeholder="At least 6 characters"
+            placeholder="至少 6 位字符"
           />
           <AppInput
             v-model="form.password2"
-            label="Confirm Password"
+            label="确认密码"
             type="password"
-            placeholder="Repeat your password"
+            placeholder="请再次输入密码"
           />
 
           <div
@@ -58,17 +58,17 @@
           </div>
 
           <AppButton type="submit" :loading="loading" class="w-full">
-            Create account
+            创建账号
           </AppButton>
         </form>
 
         <p class="mt-5 text-center text-sm text-slate-500 dark:text-slate-400">
-          Already have an account?
+          已有账号？
           <router-link
             to="/login"
             class="font-medium text-blue-600 dark:text-blue-400 hover:underline"
           >
-            Sign in
+            登录
           </router-link>
         </p>
       </div>

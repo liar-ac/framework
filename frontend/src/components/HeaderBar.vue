@@ -28,7 +28,7 @@
           class="flex items-center gap-2 h-9 px-3.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700 text-sm text-slate-400 dark:text-slate-500 cursor-pointer hover:border-slate-300 dark:hover:border-slate-600 transition-colors"
         >
           <Search :size="15" />
-          <span class="text-xs">Search...</span>
+          <span class="text-xs">搜索...</span>
           <kbd
             class="ml-4 px-1.5 py-0.5 text-[10px] font-medium bg-white dark:bg-slate-700 rounded border border-slate-200 dark:border-slate-600 text-slate-400"
           >
@@ -82,7 +82,7 @@ const themeStore = useThemeStore()
 const effectiveTheme = computed(() => themeStore.getEffectiveTheme())
 
 const themeLabel = computed(() => {
-  const map = { light: 'Light mode', dark: 'Dark mode', system: 'System theme' }
+  const map = { light: '浅色模式', dark: '深色模式', system: '跟随系统' }
   return map[themeStore.theme]
 })
 
@@ -92,12 +92,12 @@ const userInitial = computed(() => {
 })
 
 const pageMeta = {
-  '/': { title: 'Home', description: 'Your profile and account overview' },
-  '/dashboard': { title: 'Dashboard', description: 'System overview and quick actions' },
-  '/system': { title: 'System', description: 'System configuration and management' },
-  '/settings': { title: 'Settings', description: 'Manage your application preferences' },
+  '/': { title: '首页', description: '个人资料与账户概览' },
+  '/dashboard': { title: '控制台', description: '系统概览与快捷操作' },
+  '/system': { title: '系统', description: '系统配置与模块管理' },
+  '/settings': { title: '设置', description: '管理应用偏好与配置参数' },
 }
 
-const pageTitle = computed(() => pageMeta[route.path]?.title || 'Framework')
+const pageTitle = computed(() => pageMeta[route.path]?.title || '开发框架')
 const pageDescription = computed(() => pageMeta[route.path]?.description || '')
 </script>

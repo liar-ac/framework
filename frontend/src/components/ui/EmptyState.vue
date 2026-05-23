@@ -5,10 +5,10 @@
       <Inbox v-else :size="28" class="text-slate-400 dark:text-slate-500" />
     </div>
     <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100 mb-1">
-      {{ title || 'No data' }}
+      {{ title || '暂无数据' }}
     </h3>
     <p class="text-sm text-slate-500 dark:text-slate-400 max-w-sm mb-6">
-      {{ description || 'There is nothing to display here yet.' }}
+      {{ description || '这里暂时没有任何内容。' }}
     </p>
     <slot />
   </div>

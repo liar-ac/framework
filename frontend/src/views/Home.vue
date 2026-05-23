@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-6">
-    <PageHeader title="Home" description="Your profile and account overview" />
+    <PageHeader title="首页" description="个人资料与账户概览" />
 
     <AppCard v-if="userStore.userInfo">
       <div class="flex flex-col sm:flex-row items-start gap-5">
@@ -15,31 +15,31 @@
               {{ userStore.userInfo.username }}
             </h3>
             <p class="text-sm text-slate-500 dark:text-slate-400">
-              {{ userStore.userInfo.email || 'No email set' }}
+              {{ userStore.userInfo.email || '未设置邮箱' }}
             </p>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div class="space-y-1">
               <p class="text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                Nickname
+                昵称
               </p>
               <p class="text-sm text-slate-700 dark:text-slate-300">
-                {{ userStore.userInfo.nickname || 'Not set' }}
+                {{ userStore.userInfo.nickname || '未设置' }}
               </p>
             </div>
             <div class="space-y-1">
               <p class="text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                Joined
+                注册时间
               </p>
               <p class="text-sm text-slate-700 dark:text-slate-300">
-                {{ userStore.userInfo.date_joined || 'Unknown' }}
+                {{ userStore.userInfo.date_joined || '未知' }}
               </p>
             </div>
             <div class="space-y-1">
               <p class="text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider">
-                Role
+                角色
               </p>
-              <AppBadge variant="info">Member</AppBadge>
+              <AppBadge variant="info">普通用户</AppBadge>
             </div>
           </div>
         </div>
@@ -49,12 +49,12 @@
     <AppCard v-else>
       <EmptyState
         :icon="UserCircle"
-        title="No user data"
-        description="Unable to load user information. Please try logging in again."
+        title="暂无用户数据"
+        description="无法加载用户信息，请尝试重新登录。"
       >
         <AppButton variant="secondary" size="sm" @click="retryFetch">
           <RefreshCw :size="14" />
-          Retry
+          重试
         </AppButton>
       </EmptyState>
     </AppCard>
@@ -96,9 +96,9 @@ const userInitial = computed(() => {
 })
 
 const accountStats = [
-  { label: 'Account Status', value: 'Active', icon: Shield, iconBg: 'bg-emerald-50 dark:bg-emerald-500/10', iconColor: 'text-emerald-500' },
-  { label: 'Last Login', value: 'Today', icon: Clock, iconBg: 'bg-blue-50 dark:bg-blue-500/10', iconColor: 'text-blue-500' },
-  { label: 'Sessions', value: '1', icon: Activity, iconBg: 'bg-violet-50 dark:bg-violet-500/10', iconColor: 'text-violet-500' },
+  { label: '账户状态', value: '正常', icon: Shield, iconBg: 'bg-emerald-50 dark:bg-emerald-500/10', iconColor: 'text-emerald-500' },
+  { label: '最近登录', value: '今天', icon: Clock, iconBg: 'bg-blue-50 dark:bg-blue-500/10', iconColor: 'text-blue-500' },
+  { label: '活跃会话', value: '1', icon: Activity, iconBg: 'bg-violet-50 dark:bg-violet-500/10', iconColor: 'text-violet-500' },
 ]
 
 async function retryFetch() {

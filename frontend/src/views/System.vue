@@ -1,10 +1,10 @@
 <template>
   <div class="space-y-6">
-    <PageHeader title="System" description="System configuration and management">
+    <PageHeader title="系统" description="系统配置与模块管理">
       <template #actions>
         <AppButton variant="secondary" size="sm">
           <RefreshCw :size="14" />
-          Refresh
+          刷新
         </AppButton>
       </template>
     </PageHeader>
@@ -28,7 +28,7 @@
       </AppCard>
     </div>
 
-    <AppCard title="System Modules" description="Available management modules">
+    <AppCard title="系统模块" description="可用的管理模块">
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <div
           v-for="mod in modules"
@@ -54,7 +54,7 @@
       </div>
     </AppCard>
 
-    <AppCard title="Environment" description="Runtime environment details">
+    <AppCard title="运行环境" description="当前运行环境详情">
       <div class="space-y-3">
         <div
           v-for="env in envInfo"
@@ -87,24 +87,24 @@ import {
 } from 'lucide-vue-next'
 
 const systemInfo = [
-  { label: 'Backend', value: 'Django 5.x', icon: Server, iconBg: 'bg-emerald-50 dark:bg-emerald-500/10', iconColor: 'text-emerald-500' },
-  { label: 'Frontend', value: 'Vue 3 + Vite', icon: Globe, iconBg: 'bg-blue-50 dark:bg-blue-500/10', iconColor: 'text-blue-500' },
-  { label: 'Database', value: 'SQLite / PostgreSQL', icon: Database, iconBg: 'bg-violet-50 dark:bg-violet-500/10', iconColor: 'text-violet-500' },
+  { label: '后端框架', value: 'Django 5.x', icon: Server, iconBg: 'bg-emerald-50 dark:bg-emerald-500/10', iconColor: 'text-emerald-500' },
+  { label: '前端框架', value: 'Vue 3 + Vite', icon: Globe, iconBg: 'bg-blue-50 dark:bg-blue-500/10', iconColor: 'text-blue-500' },
+  { label: '数据库', value: 'SQLite / PostgreSQL', icon: Database, iconBg: 'bg-violet-50 dark:bg-violet-500/10', iconColor: 'text-violet-500' },
 ]
 
 const modules = [
-  { label: 'User Management', description: 'Manage users, roles, and permissions', icon: Users, iconBg: 'bg-blue-50 dark:bg-blue-500/10', iconColor: 'text-blue-500', status: 'Active', statusVariant: 'success' },
-  { label: 'Authentication', description: 'JWT token-based auth system', icon: Key, iconBg: 'bg-violet-50 dark:bg-violet-500/10', iconColor: 'text-violet-500', status: 'Active', statusVariant: 'success' },
-  { label: 'API Gateway', description: 'RESTful API with proxy support', icon: Globe, iconBg: 'bg-emerald-50 dark:bg-emerald-500/10', iconColor: 'text-emerald-500', status: 'Active', statusVariant: 'success' },
-  { label: 'Audit Logs', description: 'System event logging', icon: FileText, iconBg: 'bg-amber-50 dark:bg-amber-500/10', iconColor: 'text-amber-500', status: 'Planned', statusVariant: 'neutral' },
-  { label: 'Security', description: 'CORS, rate limiting, CSRF', icon: Shield, iconBg: 'bg-red-50 dark:bg-red-500/10', iconColor: 'text-red-500', status: 'Active', statusVariant: 'success' },
-  { label: 'Backup', description: 'Database backup and restore', icon: HardDrive, iconBg: 'bg-slate-100 dark:bg-slate-800', iconColor: 'text-slate-500', status: 'Planned', statusVariant: 'neutral' },
+  { label: '用户管理', description: '管理用户、角色与权限', icon: Users, iconBg: 'bg-blue-50 dark:bg-blue-500/10', iconColor: 'text-blue-500', status: '运行中', statusVariant: 'success' },
+  { label: '身份认证', description: '基于 JWT Token 的认证系统', icon: Key, iconBg: 'bg-violet-50 dark:bg-violet-500/10', iconColor: 'text-violet-500', status: '运行中', statusVariant: 'success' },
+  { label: 'API 网关', description: 'RESTful API 与代理转发', icon: Globe, iconBg: 'bg-emerald-50 dark:bg-emerald-500/10', iconColor: 'text-emerald-500', status: '运行中', statusVariant: 'success' },
+  { label: '审计日志', description: '系统事件记录与查询', icon: FileText, iconBg: 'bg-amber-50 dark:bg-amber-500/10', iconColor: 'text-amber-500', status: '规划中', statusVariant: 'neutral' },
+  { label: '安全防护', description: 'CORS、限流、CSRF 防护', icon: Shield, iconBg: 'bg-red-50 dark:bg-red-500/10', iconColor: 'text-red-500', status: '运行中', statusVariant: 'success' },
+  { label: '数据备份', description: '数据库备份与恢复', icon: HardDrive, iconBg: 'bg-slate-100 dark:bg-slate-800', iconColor: 'text-slate-500', status: '规划中', statusVariant: 'neutral' },
 ]
 
 const envInfo = [
-  { key: 'API Base URL', value: import.meta.env.VITE_API_BASE_URL || '/api' },
-  { key: 'App Version', value: '1.0.0' },
-  { key: 'Build Mode', value: import.meta.env.MODE },
-  { key: 'Framework', value: 'Vue 3.4 + Vite 5' },
+  { key: 'API 基础地址', value: import.meta.env.VITE_API_BASE_URL || '/api' },
+  { key: '应用版本', value: '1.0.0' },
+  { key: '构建模式', value: import.meta.env.MODE },
+  { key: '技术栈', value: 'Vue 3.4 + Vite 5' },
 ]
 </script>

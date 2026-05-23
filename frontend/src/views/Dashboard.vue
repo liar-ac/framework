@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-6">
-    <PageHeader title="Dashboard" description="System overview and quick actions" />
+    <PageHeader title="控制台" description="系统概览与快捷操作" />
 
     <!-- Hero Welcome Card -->
     <div
@@ -15,20 +15,19 @@
 
       <div class="relative">
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-slate-100">
-          Welcome back
+          欢迎回来
         </h2>
         <p class="mt-2 text-sm text-slate-500 dark:text-slate-400 max-w-lg">
-          A modern Django + Vue 3 development framework is ready. Build your next project with
-          confidence.
+          一个现代化的 Django + Vue 3 开发框架已经准备就绪，开始构建你的下一个项目吧。
         </p>
         <div class="mt-5 flex flex-wrap gap-3">
           <AppButton size="sm">
             <Rocket :size="15" />
-            Quick Start
+            快速开始
           </AppButton>
           <AppButton variant="secondary" size="sm">
             <BookOpen :size="15" />
-            View Docs
+            查看文档
           </AppButton>
         </div>
       </div>
@@ -64,7 +63,7 @@
     <!-- Quick Actions + Recent Activity -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
       <!-- Quick Actions -->
-      <AppCard title="Quick Actions" description="Common operations" class="lg:col-span-1">
+      <AppCard title="快捷操作" description="常用功能入口" class="lg:col-span-1">
         <div class="space-y-2">
           <button
             v-for="action in quickActions"
@@ -84,7 +83,7 @@
       </AppCard>
 
       <!-- Recent Activity -->
-      <AppCard title="Recent Activity" description="Latest system events" class="lg:col-span-2">
+      <AppCard title="最近动态" description="系统最新事件" class="lg:col-span-2">
         <div class="space-y-1">
           <div
             v-for="activity in recentActivity"
@@ -139,16 +138,16 @@ import {
 
 const stats = [
   {
-    label: 'Backend Status',
-    value: 'Active',
+    label: '后端状态',
+    value: '运行中',
     icon: Server,
     iconBg: 'bg-emerald-50 dark:bg-emerald-500/10',
     iconColor: 'text-emerald-500',
-    badge: 'Healthy',
+    badge: '正常',
     badgeVariant: 'success',
   },
   {
-    label: 'API Requests',
+    label: 'API 请求数',
     value: '12.8k',
     icon: Activity,
     iconBg: 'bg-blue-50 dark:bg-blue-500/10',
@@ -157,17 +156,17 @@ const stats = [
     badgeVariant: 'info',
   },
   {
-    label: 'Users',
+    label: '用户数',
     value: '1,248',
     icon: Users,
     iconBg: 'bg-violet-50 dark:bg-violet-500/10',
     iconColor: 'text-violet-500',
-    badge: '+42 today',
+    badge: '今日 +42',
     badgeVariant: 'neutral',
   },
   {
-    label: 'Build Status',
-    value: 'Passed',
+    label: '构建状态',
+    value: '已通过',
     icon: CheckCircle,
     iconBg: 'bg-emerald-50 dark:bg-emerald-500/10',
     iconColor: 'text-emerald-500',
@@ -177,10 +176,10 @@ const stats = [
 ]
 
 const quickActions = [
-  { label: 'Add User', icon: UserPlus, iconBg: 'bg-blue-50 dark:bg-blue-500/10', iconColor: 'text-blue-500' },
-  { label: 'View API', icon: Code, iconBg: 'bg-violet-50 dark:bg-violet-500/10', iconColor: 'text-violet-500' },
-  { label: 'Settings', icon: Settings, iconBg: 'bg-slate-100 dark:bg-slate-800', iconColor: 'text-slate-500' },
-  { label: 'View Logs', icon: FileText, iconBg: 'bg-amber-50 dark:bg-amber-500/10', iconColor: 'text-amber-500' },
+  { label: '新增用户', icon: UserPlus, iconBg: 'bg-blue-50 dark:bg-blue-500/10', iconColor: 'text-blue-500' },
+  { label: '查看接口', icon: Code, iconBg: 'bg-violet-50 dark:bg-violet-500/10', iconColor: 'text-violet-500' },
+  { label: '系统设置', icon: Settings, iconBg: 'bg-slate-100 dark:bg-slate-800', iconColor: 'text-slate-500' },
+  { label: '查看日志', icon: FileText, iconBg: 'bg-amber-50 dark:bg-amber-500/10', iconColor: 'text-amber-500' },
 ]
 
 const recentActivity = [
@@ -189,9 +188,9 @@ const recentActivity = [
     icon: Shield,
     iconBg: 'bg-blue-50 dark:bg-blue-500/10',
     iconColor: 'text-blue-500',
-    title: 'System security scan completed',
-    time: '2 minutes ago',
-    badge: 'Passed',
+    title: '系统安全扫描已完成',
+    time: '2 分钟前',
+    badge: '已通过',
     badgeVariant: 'success',
   },
   {
@@ -199,9 +198,9 @@ const recentActivity = [
     icon: Users,
     iconBg: 'bg-violet-50 dark:bg-violet-500/10',
     iconColor: 'text-violet-500',
-    title: 'New user registered: john@example.com',
-    time: '15 minutes ago',
-    badge: 'New',
+    title: '新用户注册：john@example.com',
+    time: '15 分钟前',
+    badge: '新用户',
     badgeVariant: 'info',
   },
   {
@@ -209,9 +208,9 @@ const recentActivity = [
     icon: Zap,
     iconBg: 'bg-amber-50 dark:bg-amber-500/10',
     iconColor: 'text-amber-500',
-    title: 'API rate limit threshold reached',
-    time: '1 hour ago',
-    badge: 'Warning',
+    title: 'API 请求频率达到阈值',
+    time: '1 小时前',
+    badge: '警告',
     badgeVariant: 'warning',
   },
   {
@@ -219,9 +218,9 @@ const recentActivity = [
     icon: RefreshCw,
     iconBg: 'bg-emerald-50 dark:bg-emerald-500/10',
     iconColor: 'text-emerald-500',
-    title: 'Database backup completed successfully',
-    time: '3 hours ago',
-    badge: 'Done',
+    title: '数据库备份已完成',
+    time: '3 小时前',
+    badge: '完成',
     badgeVariant: 'success',
   },
 ]

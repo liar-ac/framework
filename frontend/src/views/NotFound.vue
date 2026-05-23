@@ -10,11 +10,11 @@
       </div>
       <h1 class="text-5xl font-bold text-slate-900 dark:text-slate-100 mb-2">404</h1>
       <p class="text-slate-500 dark:text-slate-400 mb-6">
-        The page you're looking for doesn't exist.
+        你访问的页面不存在或已被移动。
       </p>
       <AppButton @click="$router.push('/')">
         <Home :size="16" />
-        Back to Home
+        返回首页
       </AppButton>
     </div>
   </div>

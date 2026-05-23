@@ -24,10 +24,10 @@
       </div>
       <div>
         <div class="text-sm font-bold text-slate-900 dark:text-slate-100 tracking-tight">
-          Framework
+          开发框架
         </div>
         <div class="text-[11px] text-slate-400 dark:text-slate-500 -mt-0.5">
-          Django + Vue Starter
+          Django + Vue 基础框架
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
         </div>
         <div class="flex-1 min-w-0">
           <div class="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
-            {{ userStore.userInfo?.username || 'User' }}
+            {{ userStore.userInfo?.username || '用户' }}
           </div>
           <div class="text-[11px] text-slate-400 dark:text-slate-500 truncate">
             {{ userStore.userInfo?.email || 'user@framework.dev' }}
@@ -71,7 +71,7 @@
         </div>
         <button
           class="p-1.5 rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-500/10 transition-colors cursor-pointer"
-          title="Logout"
+          title="退出登录"
           @click="handleLogout"
         >
           <LogOut :size="16" />
@@ -105,10 +105,10 @@ const router = useRouter()
 const userStore = useUserStore()
 
 const navItems = [
-  { to: '/', label: 'Home', icon: Home },
-  { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { to: '/system', label: 'System', icon: Settings },
-  { to: '/settings', label: 'Settings', icon: SlidersHorizontal },
+  { to: '/', label: '首页', icon: Home },
+  { to: '/dashboard', label: '控制台', icon: LayoutDashboard },
+  { to: '/system', label: '系统', icon: Settings },
+  { to: '/settings', label: '设置', icon: SlidersHorizontal },
 ]
 
 const userInitial = computed(() => {

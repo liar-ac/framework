@@ -14,10 +14,10 @@
           <Layers :size="22" class="text-white" />
         </div>
         <h1 class="text-xl font-bold text-slate-900 dark:text-slate-100">
-          Welcome back
+          欢迎回来
         </h1>
         <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">
-          Sign in to your account
+          登录你的账号
         </p>
       </div>
 
@@ -27,14 +27,14 @@
         <form @submit.prevent="handleLogin" class="space-y-4">
           <AppInput
             v-model="form.username"
-            label="Username"
-            placeholder="Enter your username"
+            label="用户名"
+            placeholder="请输入用户名"
           />
           <AppInput
             v-model="form.password"
-            label="Password"
+            label="密码"
             type="password"
-            placeholder="Enter your password"
+            placeholder="请输入密码"
           />
 
           <div
@@ -46,17 +46,17 @@
           </div>
 
           <AppButton type="submit" :loading="loading" class="w-full">
-            Sign in
+            登录
           </AppButton>
         </form>
 
         <p class="mt-5 text-center text-sm text-slate-500 dark:text-slate-400">
-          Don't have an account?
+          还没有账号？
           <router-link
             to="/register"
             class="font-medium text-blue-600 dark:text-blue-400 hover:underline"
           >
-            Sign up
+            注册
           </router-link>
         </p>
       </div>
